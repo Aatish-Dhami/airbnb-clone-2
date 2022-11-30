@@ -8,17 +8,11 @@ import data from './data';
 export default function App() {
   const descr = "Join unique interactive activities led by one-of-a-kind hosts—all without leaving home"
   
-  const cardElement = data.map(d => {
+  const cardElement = data.map(item => {
     return (
       <Card 
-          img={d.coverImg} 
-          rating={d.stats.rating} 
-          reviewCount={d.stats.reviewCount} 
-          location={d.location} 
-          title={d.title} 
-          price={d.price}
-          openSpots={d.openSpots}
-
+          key={item.id}
+          item={item}
         />
     )
   })
